@@ -1,0 +1,278 @@
+*{
+    margin: 0;padding: 0;
+    /* border: 1px solid red; */
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    /* background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%); */
+    /* background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%); */
+    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+
+}
+
+/* General Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Header Styles */
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Alternate Row Colors */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover Effect */
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* Responsive Table Styling */
+@media screen and (max-width: 600px) {
+  th, td {
+      display: block;
+      width: 100%;
+  }
+
+  th {
+      text-align: left;
+  }
+
+  /* Hide table headers (but not display: none;, for accessibility) */
+  th {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+  }
+
+  tr {
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+  }
+
+  td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+  }
+
+  td:before {
+      /* Now like a table header */
+      position: absolute;
+      /* Top/left values mimic padding */
+      top: 6px;
+      left: 6px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+  }
+
+  /* Label the data */
+  td:nth-of-type(1):before { content: "Column 1"; }
+  td:nth-of-type(2):before { content: "Column 2"; }
+  /* Add more columns as needed */
+}
+
+@keyframes increaseWidth {
+  0% {
+    width: 0;
+    /* height: 70px; */
+  }
+  50% {
+    width: 700px;
+    /* height: 70px; */
+
+  }
+  100% {
+    width:auto;
+  }
+}
+#heading{
+  /* width: 0px; */
+  overflow: hidden;
+  animation: increaseWidth 2s ease-out ;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.ul2 li{
+  transition: 0.5s ease-in-out;
+}
+.ul2 li:hover{
+  transform: scale(1.1);
+  color: #007bff;
+  border-bottom: 1px solid red;
+}
+.navbar{
+  background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+
+}
+.navbar *{
+    display: flex;
+    /* background-color:#435334; */
+    /* color: #FAF1E4; */
+    color:#000000 !important;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+
+}
+.btn {
+    background-color: #ffffff;
+    color: #0a0a0a; /* Text color for contrast */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none; /* Remove border if not needed */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add hover effect */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+border: 1px solid black;
+    font-size: 16px; /* Adjust font size as needed */
+  }
+  /* Include the font from Google Fonts in your HTML file's head section */
+
+/* Apply the font to your text */
+.stylish-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 78px; /* You can adjust the font size as needed */
+  font-weight: 300; /* You can adjust the font weight as needed */
+  /* Add any other styling you desire */
+}
+
+  /* Hover effect */
+  .btn:hover {
+    background-color: #e4e8e4; /* Change the background color on hover */
+    transform: scale(0.9);
+    transition: 0.3s;
+  }
+  
+  .btn:active {
+    background-color: #eceeeb; /* Change the background color on hover */
+    transform: scale(0.9);
+    transition: 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+/* Basic Button Styles */
+.button {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #000000; /* Border color */
+  color: #3498db; /* Text color */
+  background-color: #fff; /* Background color */
+  border-radius: 5px; /* Adjust border radius for rounded corners */
+}
+
+/* Hover Effect */
+.button:hover {
+  background-color: #3498db; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+/* You can add additional styles for active and focus states if needed */
+
+.ul2 {
+display: flex;
+}
+li{
+    list-style: none;
+}
+.ul2 li {
+    padding: 10px;
+    font-size: larger;
+}
+
+/* Div deesign1
+ */
+ .home{
+    width: 100%;
+    display: flex;
+ }
+
+ h1{
+    font-size: 80px;
+    padding-bottom: 20px;
+ }
+
+ .mob-50{
+  width: 48% !important;
+ }
+ .home-div{
+    /* background-color:orange ; */
+    width: 50%;
+    /* border: 2px solid green; */
+    padding: 70px;
+ }
+.bg{
+    /* background-color:purple ; */
+    background-color:#ffffff !important;
+
+    color: #FAF1E4 !important;}
+ footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+a{
+  color: #FAF1E4;
+  text-decoration: none;
+
+}
+/* CSS for the "back to top" button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.shadow2{
+  -webkit-box-shadow: 14px 16px 20px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 14px 16px 20px 0px rgba(0,0,0,0.75);
+box-shadow: 14px 16px 20px 0px rgba(0,0,0,0.75);
+}
+
+
+
+@media screen and (max-width: 360px) {
+  /* Adjust styles for smaller screens */
+
+  /* Example: Make the font size smaller for better readability on small screens */
+ .mob-block{
+display: block !important  ; 
+ }
+table{
+  overflow: scroll !important;
+}
+body{
+  padding: 10px !important;
+}
+ .mob-50{
+  width: 100% !important;
+ }
+  /* Adjust other styles as needed */
+}
