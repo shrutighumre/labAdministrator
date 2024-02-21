@@ -128,30 +128,20 @@ body {
     <!-- </div> -->
 </center>
 <div style="margin: 20px;">
-<?php
-include("../db/db.php");
-$id = $_COOKIE['userID'];
-$sql2 = "SELECT * FROM `user` WHERE userID='$id';";
-$result = $conn->query($sql2);
-$row = $result->fetch_assoc();
-
-
-
-?>
-
-    <p style="padding: 10px;">ID :<?php echo $row['userID'] ?> </p>
+    
+    <p style="padding: 10px;">ID : </p>
 
     <hr>
-    <p style="padding: 10px;">Name : <?php echo $row['uName'] ?></p>
+    <p style="padding: 10px;">Name : </p>
     
     <hr>
-    <p style="padding: 10px;">Std :<?php echo $row['std'] ?> </p>
+    <p style="padding: 10px;">Std : </p>
     <hr>
-    <p style="padding: 10px;">Division : <?php echo $row['divs'] ?></p>
+    <p style="padding: 10px;">Roll No : </p>
     <hr>
-    <p style="padding: 10px;">EmailID :<?php echo $row['email'] ?> </p>
+    <p style="padding: 10px;">EmailID : </p>
     <hr>
-    <p style="padding: 10px;">UserNAME :<?php echo $row['userName'] ?> </p>
+    <p style="padding: 10px;">MobileNO : </p>
     <hr>
     
     <center style="margin-top: 10px;"><button  onclick="back()"  class="btn" style="transform: scale(0.8); margin: 0;">Back</button></center>

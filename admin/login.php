@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+    if(isset($_COOKIE['adminID'])){
+        header("Location:index.php");
+    }
+    
+    ?>
+<?php  
+
+include("../db/db.php");
+// error_reporting(0);
+    if(isset($_POST['login'])) { 
+
+$userName = $_POST['username'];
+$pwd = $_POST['password'];
+
+
+
+$query = "select * from admin where uName='$userName' and Pwd='$pwd' ";
+// echo "$query";
+$fetch  = $conn->query($query);
+
+if($fetch->num_rows > 0) {
+    // echo "$data[userID]";
+while($data = $fetch->fetch_assoc()){
+    setcookie("adminID", "$data[adminID]" , time() + (86400 * 30*365), "/"); 
+}
+
+echo "Logged in";
+header("LOcation:index.php");
+  }
+  
+  else {
+    echo "Incorrect UserName Or Password";
+  }
+
+    } 
+?> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,14 +98,14 @@
     <div class="login-container">
         <h2 style="font-family: cursive;">LabXpert</h2>
         <br>
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="login.php">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 <br><br>
-            <button type="button" class="btn">Login</button>
+            <button type="submit" name="login" class="btn">Login</button>
             <br><br>
 
             <p><a href="#" id="forgotPwd">Forgot Password?</a></p>

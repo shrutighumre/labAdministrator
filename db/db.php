@@ -14,3 +14,9 @@ if ($conn->connect_error) {
 
 // echo "Connected successfully";
 ?>
+<script>
+
+if(window.history.replaceState){
+    window.history.replaceState(null,null,window.location.href);
+}
+</script>
