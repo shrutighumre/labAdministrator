@@ -1,7 +1,7 @@
 <?php
 
-unset($_COOKIE['teacherID']);
-setcookie('teacherID', '', -1, '/');
+unset($_COOKIE['adminID']);
+setcookie('adminID', '', -1, '/');
 header("LOcation:../");
 
 ?>

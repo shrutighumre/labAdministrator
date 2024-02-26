@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php
+ 
+include("../db/db.php");
+
+
+
+
+
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,10 +42,33 @@
             font-size: 1.2em;
             margin-bottom: 10px;
         }
+        button{
+            padding: 10px;
+        background-color: rgb(66, 157, 255);
+        color: black;
+        }
+        button:hover{
+            padding: 10px;
+        background-color: rgb(248, 78, 78);
+        color: black;
+        }
+
+        .t{
+            background-color: rgb(251, 141, 141) !important;
+            border: 2px solid red;
+            /* display:none; */
+        }
     </style>
 </head>
 <body>
     <br><br>
+    <style>
+        .btn{
+    padding: 8px 20px !important;
+
+}
+    </style>
+<center><a href="index.php" class='btn'><button class='btn'>back</button></a></center>
     <table style="width:90% !important; margin:auto;">
         <caption>Complaints</caption>
         <thead>
@@ -45,37 +78,46 @@
                 <th>Subject</th>
                 <th>Message</th>
                 <th>Person</th>
+                <th>Time</th>
+
                 <th>Method</th>
 
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>John Doe</td>
-                <td>Internet Issue</td>
-                <td>The internet connection is very slow.</td>
-                <td>Customer</td>
-               <td > <a href=""><button>Done</button></a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Jane Smith</td>
-                <td>Payment Error</td>
-                <td>There was an error while processing my payment.</td>
-                <td>Client</td>
-               <td > <a href=""><button>Done</button></a></td>
+        <?php
+    
+    $q1 = "select * from complaint";
 
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Michael Johnson</td>
-                <td>Product Quality</td>
-                <td>The quality of the product received is not satisfactory.</td>
-                <td>Consumer</td>
-               <td > <a href=""><button>Done</button></a></td>
+    $exe1 = $conn->query($q1);
 
-            </tr>
+    if($exe1->num_rows>0){
+        while ($row = $exe1->fetch_assoc()) {
+            if($row["userType"]=="teacher")
+            {
+
+                echo "<tr class='t'>";
+            }
+            else{
+                echo "<tr class=''>";
+
+            }
+            echo "           <td>$row[cid]</td>";
+            echo "           <td>$row[uname]</td>";
+            echo "           <td>$row[subject]</td>";
+            echo "           <td>$row[complaint]</td>";
+            echo "           <td>$row[userType]</td>";
+            echo "           <td>$row[timey]</td>";
+            echo "           <td><a href='deleteComplaint.php?id=$row[cid]'><button class='delete-btn'>Solved</button></a></td>";
+            echo"       </tr>";
+        }
+    }else{
+        echo "<h4 style='color:red'>No Student FOund !!! </h4>";
+    }
+    
+    
+    
+    ?>
             <!-- Add more rows as needed -->
         </tbody>
     </table>

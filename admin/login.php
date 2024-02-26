@@ -6,10 +6,10 @@
         header("Location:index.php");
     }
     
+    include("../db/db.php");
     ?>
 <?php  
 
-include("../db/db.php");
 // error_reporting(0);
     if(isset($_POST['login'])) { 
 
