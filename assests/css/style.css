@@ -7,10 +7,36 @@
 body{
     /* background-image: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%); */
     /* background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%); */
-    background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%);
+    /* background-image: linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%); */
+    background: rgb(238,174,202);
+background: -moz-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+background: -webkit-radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eeaeca",endColorstr="#94bbe9",GradientType=1);
+
+
+
 
 }
+.blur{
+  background: rgba( 255, 255, 255, 0.4 ) !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
+backdrop-filter: blur( 6.5px ) !important;
+-webkit-backdrop-filter: blur( 6.5px ) !important;
+border-radius: 10px !important;
+border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
+.g{
+  background: hsla(186, 33%, 94%, 1) !important;
 
+background: linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%) !important;
+
+background: -moz-linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%) !important;
+
+background: -webkit-linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%) !important;
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EBF4F5", endColorstr="#B5C6E0", GradientType=1 ) !important;
+}
 /* General Table Styles */
 table {
   width: 100%;
@@ -21,19 +47,19 @@ table {
 th, td {
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  /* border-bottom: 1px solid #ddd; */
 }
 
 /* Header Styles */
 th {
   background-color: #f2f2f2;
   font-weight: bold;
-  color: #333;
+  /* color: #333; */
 }
 
 /* Alternate Row Colors */
 tr:nth-child(even) {
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 /* Hover Effect */

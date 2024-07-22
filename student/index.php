@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-
+include_once("../db/db.php");
 if(!isset($_COOKIE['userID'])){
     header("Location:../");
 }
@@ -49,46 +49,51 @@ text-align: center;
 <div class="mob-block" style="width: 100%; display: flex; justify-content: space-around; overflow: hidden;">
 
     <div style="" class="mob-50">
+   
+<table style="width:50% !important; margin:auto;">
+        <thead>
+            <tr>
+                <th>Standard</th>
+                <th>Subject</th>
+                <th>Div</th>
+                <th>From</th>
+                <th>To</th>
+                <th>day</th>
+                
+
+
+
+            </tr>
+        </thead>
+        <tbody>
+        <?php
     
-    <table style="width: 60%; justify-content: center; text-align: center; margin: auto;margin-top: 10%;">
-        <tr>
-            <th>Sr.No</th>
-            <th>Std</th>
+    $q1 = "select * , date(timey)  as t , time(start) as start2 from tt order by t desc";
 
-            <th>Timing</th>
+    $exe1 = $conn->query($q1);
 
-        </tr>
-        <tr>
-            <td>TYBSCIT</td>
-            <td>7:00-9:00 am</td>
-            <td>7:00-9:00 am</td>
-        </tr>
-        <tr>
-            <td>TYBSCIT</td>
-            <td>7:00-9:00 am</td>
-            <td>7:00-9:00 am</td>
-        </tr>
-        <tr>
-            <td>TYBSCIT</td>
-            <td>7:00-9:00 am</td>
-            <td>7:00-9:00 am</td>
-        </tr>
-        <tr>
-            <td>TYBSCIT</td>
-            <td>7:00-9:00 am</td>
-            <td>7:00-9:00 am</td>
-        </tr>
-        <tr>
-            <td>TYBSCIT</td>
-            <td>7:00-9:00 am</td>
-            <td>7:00-9:00 am</td>
-        </tr>
+    if($exe1->num_rows>0){
+        while ($row = $exe1->fetch_assoc()) {
+           
+            echo "           <td>$row[std]</td>";
+            echo "           <td>$row[subject]</td>";
+            echo "           <td>$row[div]</td>";
+            echo "           <td>$row[start2]</td>";
+            echo "           <td>$row[end]</td>";
+            echo "           <td>$row[dayy]</td>";
+            // echo "           <td>$row[t]</td>";
 
-       
-
-
-      
-
+            echo"       </tr>";
+        }
+    }else{
+        echo "<h4 style='color:red'><center>No Today TimeTable FOund !!!</center> </h4>";
+    }
+    
+    
+    
+    ?>
+            <!-- Add more rows as needed -->
+        </tbody>
     </table>
     </div>
 
@@ -97,14 +102,26 @@ text-align: center;
     
        <?php
        
-       
-       for ($i=0; $i < 2; $i++) { 
-        echo "<div style='margin-top: 10px !important;width: 90%; margin: auto; box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; padding: 10px; background-color: rgb(255, 255, 255) !important; border-radius: 15px;'>";
-        echo "       <h3>🔔Notice on ..</h3>";
-        echo "       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur perspiciatis repellendus suscipit totam voluptas assumenda reprehenderit nisi incidunt velit accusamus.</p>";
-        echo "       </div>";
+       $q1 = "SELECT * FROM notice ORDER BY nid DESC";
+
+       $exe1 = $conn->query($q1);
+   
+       if($exe1->num_rows>0){
+           while ($row = $exe1->fetch_assoc()) {
+            echo "<div class='blur' style='margin-top: 10px !important;width: 90%; margin: auto; box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; padding: 10px;  border-radius: 15px;'>";
+                echo "       <h3>🔔$row[heading]</h3>";
+                echo "       <p>$row[body]<</p>";
+                echo "       </div>";
+           }
+       }else{
+           echo "<h4 style='color:red'>No Student FOund !!! </h4>";
        }
-       ?>
+       
+       
+
+
+
+      ?>
 
        
 

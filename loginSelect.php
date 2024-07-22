@@ -40,7 +40,7 @@ border-radius: 15px;
 <center><img style="mix-blend-mode:multiply ;" src="assests/img/login.jpeg" width="70" height="70" alt=""></center>
 <!-- <br><br><br><br><br><br> -->
 <div class="MAIN" style="justify-content: center;display: flex;">
-    <div  class="A" >
+    <div  class="A g" >
         <div>
            <h2>Student</h2> <hr>
             <div>
@@ -50,7 +50,7 @@ border-radius: 15px;
             </div>
         </div>
     </div>
-    <div  class="A">
+    <div  class="A g">
         <div>
             <h2>Teacher</h2> <hr>
             <div>
@@ -61,7 +61,7 @@ border-radius: 15px;
         </div>
     </div>
 
-    <div class="A">
+    <div class="A g">
         <div>
            <h2>Admin</h2><hr>
             <div>

@@ -10,10 +10,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=a, initial-scale=1.0">
+    <meta name="description" content="lab">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="../assests/css/style.css">
 
     <style>
+        #menu * {
+            font-size: 25px !important;
+        }
+        #menu img{
+            padding-bottom: -40px !important;
+
+        }
+        .blur{
+  background: rgba( 255, 255, 255, 0.4 ) !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
+backdrop-filter: blur( 6.5px ) !important;
+-webkit-backdrop-filter: blur( 6.5px ) !important;
+border-radius: 10px !important;
+border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
+}
         *{
 
             /* border: 1px solid red; */
@@ -22,10 +38,17 @@ table *{
     text-align: center;
     /* justify-content:center ; */
     margin: auto;
+    
 }
 table{
     width: 80%;
     margin: auto;
+    background: rgba( 255, 255, 255, 0.4 ) !important;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ) !important;
+backdrop-filter: blur( 6.5px ) !important;
+-webkit-backdrop-filter: blur( 6.5px ) !important;
+border-radius: 10px !important;
+border: 1px solid rgba( 255, 255, 255, 0.18 ) !important;
 }
 
 #body2{
@@ -58,13 +81,15 @@ table{
     <div id="menu">
 <ul>
 <a href="index.php"><li><img src="https://cdn.iconscout.com/icon/premium/png-512-thumb/dashboard-127-464844.png" width="25" height="25" alt="">DashBoard</li></a>
-<a href="profile.php"><li><img src="https://th.bing.com/th/id/OIP.ncOCV5LVCL8j70Edjgyn6QHaGy?rs=1&pid=ImgDetMain" width="25" height="25" alt="">Profile</li></a>
            <a href="../Computer.php"><li><img src="https://static.vecteezy.com/system/resources/previews/000/653/403/original/vector-computer-icon-image.jpg" width="25" height="25" alt="">Computers</li></a>
+           <a href="addTeachers.php"><li><img src="https://th.bing.com/th/id/OIP.ncOCV5LVCL8j70Edjgyn6QHaGy?rs=1&pid=ImgDetMain" width="25" height="25" alt="">Add Teachers</li></a>
+           
            <a href="Complaints.php"><li><img src="https://thumbs.dreamstime.com/b/complaint-rubber-stamp-grunge-design-dust-scratches-effects-can-be-easily-removed-clean-crisp-look-color-changed-110067304.jpg" width="25" height="25" alt="">Complaints</li></a>
            <a href="Contactus.php"><li><img src="https://www.clipartmax.com/png/middle/92-926082_contact-us-contact-us-icon-png.png" width="25" height="25" alt="">Contact US</li></a>
            <a href="notice.php"><li><img src="https://static.vecteezy.com/system/resources/previews/000/375/313/original/notice-pin-vector-icon.jpg" width="25" height="25" alt="">Notice</li></a>
-           <a href="Contact.php"><li><img src="https://static.vecteezy.com/system/resources/previews/019/823/771/non_2x/timetable-icon-vector.jpg" width="25" height="25" alt="">TimeTable</li></a>
+           <a href="TT.php"><li><img src="https://static.vecteezy.com/system/resources/previews/019/823/771/non_2x/timetable-icon-vector.jpg" width="25" height="25" alt="">TimeTable</li></a>
            <a href="viewStudent.php"><li><img src="https://th.bing.com/th/id/OIP.qgZzn3MB-dcUJM6Q1cZELQHaHa?rs=1&pid=ImgDetMain" width="25" height="25" alt="">View Student</li></a>
+           <a href="viewTeacher.php"><li><img src="https://th.bing.com/th/id/OIP.qgZzn3MB-dcUJM6Q1cZELQHaHa?rs=1&pid=ImgDetMain" width="25" height="25" alt="">View Teacher</li></a>
 
            <a href="logout.php"><li><img src="https://static.vecteezy.com/system/resources/previews/000/422/984/original/logout-icon-vector-illustration.jpg" width="25" height="25" alt="">logout</li></a>
 </ul>
@@ -76,7 +101,7 @@ table{
         <center>
             <h3>Overall Count</h3>
         </center>
-<table>
+<table class="blur">
 
 <?php
 $totalTeacher = "select count(teacherID) as teacher from teachers ";
@@ -170,8 +195,8 @@ $krow4 = $kres4->fetch_assoc();
   
   </tr>
   <tr>
+      <td><?php if(isset($krow2["user"])){echo $krow2["user"];} else{echo "0";} ?></td>
     <td><?php if(isset($krow1["teacher"])){echo $krow1["teacher"];} else{echo "0";} ?></td>
-    <td><?php if(isset($krow2["user"])){echo $krow2["user"];} else{echo "0";} ?></td>
     <td><?php if(isset($krow3["cont"])){echo $krow3["cont"];} else{echo "0";} ?></td>
     <td><?php if(isset($krow4["complaint"])){echo $krow4["complaint"];} else{echo "0";} ?></td>
     <td><?php if(isset($krow5["teacher"])){echo $krow5["teacher"];} else{echo "0";} ?></td>
